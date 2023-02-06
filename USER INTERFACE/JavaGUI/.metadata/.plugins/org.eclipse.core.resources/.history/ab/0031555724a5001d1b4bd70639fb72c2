@@ -1,0 +1,14 @@
+package javaJei;
+
+import javax.swing.JFrame;
+
+public class  MainFrameUI extends JFrame  {
+
+	
+	
+	
+	
+	
+	
+	Frame (){}
+}

@@ -1,0 +1,74 @@
+package javaJei;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class FrameGUI {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        JFrame frame = new JFrame();
+        frame.setTitle("Computing Basic Salary");
+        frame.setSize(1280, 720);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+
+        // Get the screen size and position the JFrame in the center of the screen
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (int) ((screenSize.getWidth() - frame.getWidth()) / 2);
+        int y = (int) ((screenSize.getHeight() - frame.getHeight()) / 2);
+        frame.setLocation(x, y);
+
+        // LOGO FOR MY JFRAME
+        ImageIcon image = new ImageIcon("ccs.png");
+        frame.setIconImage(image.getImage());
+        frame.getContentPane().setBackground(Color.WHITE);
+      
+        //BACKGROUND
+        JLabel background = new JLabel(new ImageIcon("background.png"));
+        background.setSize(1280, 720);
+        frame.setContentPane(background);
+        frame.setVisible(true);
+        
+        //WELCOME LABEL
+        JLabel welcome = new JLabel();
+        welcome.setIcon(new ImageIcon("welcome.png"));
+        welcome.setSize(436,300 ); // adjust the size of the image as needed
+        welcome.setBounds(700, -170, 500, 500);
+        frame.add(welcome);
+        frame.setVisible(true);
+        
+        //EMPLOYEE NAME
+        JLabel employeeName = new JLabel("EMPLOYEE NAME :");
+        employeeName.setFont(new Font("Saira Condensed", Font.BOLD, 22));
+        employeeName.setBounds(600, 180, 200, 50);
+        employeeName.setSize(300, 30);
+        employeeName.setForeground(Color.white);
+        employeeName.setOpaque(false);
+        frame.add(employeeName);
+        frame.setVisible(true);
+        
+        JTextField employeeNameTextField = new JTextField();
+        employeeNameTextField.setBounds(830, 180, 200, 50);
+        employeeNameTextField.setSize(300, 30);
+        frame.add(employeeNameTextField);
+        frame.setVisible(true);
+        
+        
+        /*
+        JLabel labels = new JLabel();
+        labels.setIcon(new ImageIcon("labels.png"));
+        labels.setSize(373,903);
+        labels.setBounds(700, 600, 500, 500);
+        frame.add(labels);
+        frame.setVisible(false);*/
+        
+    }
+}

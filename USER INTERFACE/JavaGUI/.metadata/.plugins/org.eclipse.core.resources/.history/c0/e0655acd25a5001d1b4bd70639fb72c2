@@ -1,0 +1,85 @@
+package javaJei;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class FrameGUI {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        JFrame frame = new JFrame();
+        frame.setTitle("Computing Basic Salary");
+        frame.setSize(1280, 720);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(true);
+
+        // Get the screen size and position the JFrame in the center of the screen
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (int) ((screenSize.getWidth() - frame.getWidth()) / 2);
+        int y = (int) ((screenSize.getHeight() - frame.getHeight()) / 2);
+        frame.setLocation(x, y);
+
+        // LOGO FOR MY JFRAME
+        ImageIcon image = new ImageIcon("ccs.png");
+        frame.setIconImage(image.getImage());
+        frame.getContentPane().setBackground(Color.WHITE);
+        frame.setVisible(true);
+      
+        //BACKGROUND
+        JLabel background = new JLabel(new ImageIcon("background.png"));
+        background.setSize(1280, 720);
+        frame.setContentPane(background);
+       
+        
+        //WELCOME LABEL
+        JLabel welcome = new JLabel();
+        welcome.setIcon(new ImageIcon("welcome.png"));
+        welcome.setSize(436,300 ); // adjust the size of the image as needed
+        welcome.setBounds(700, -170, 500, 500);
+        frame.add(welcome);
+      
+        
+        //EMPLOYEE NAME AND TEXTFIELD
+        JLabel employeeID = new JLabel("EMPLOYEE ID :");
+        employeeID.setFont(new Font("Saira Condensed", Font.BOLD, 22));
+        employeeID.setBounds(600, 180, 200, 50);
+        employeeID.setSize(300, 30);
+        employeeID.setForeground(Color.white);
+        employeeID.setOpaque(false);
+        frame.add(employeeID);
+        
+        JTextField employeeIDTextField = new JTextField();
+        employeeIDTextField.setBounds(835, 180, 200, 50);
+        employeeIDTextField.setSize(300, 30);
+        employeeIDTextField.setFont(new Font("Saira Condensed", Font.BOLD, 22));
+        frame.add(employeeIDTextField);
+        
+        
+        //EMPLOYEE NAME
+        JLabel emplooyeeName = new JLabel("EMPLOYEE NAME :");
+        emplooyeeName.setFont(new Font("Saira Condensed", Font.BOLD, 22));
+        emplooyeeName.setBounds(600, 230, 200, 50);
+        emplooyeeName.setSize(300, 30);
+        emplooyeeName.setForeground(Color.white);
+        emplooyeeName.setOpaque(true);
+        frame.add(emplooyeeName);
+
+        
+        
+        /*
+        JLabel labels = new JLabel();
+        labels.setIcon(new ImageIcon("labels.png"));
+        labels.setSize(373,903);
+        labels.setBounds(700, 600, 500, 500);
+        frame.add(labels);
+        frame.setVisible(false);*/
+        
+    }
+}
